@@ -1,24 +1,47 @@
-name: 'Не покидая пыльных стен'
-markdown: kramdown
+name: "Кладовая Гейтса"
+description: "Не покидая пыльных стен"
+meta_description: "Блог программиста"
+
 exclude: ['Gemfile', 'Gemfile.lock', 'makefile']
-highlighter: true
-future: true
-disqus: true
+
+markdown: redcarpet
+highlighter: pygments
 
 paginate: 20
 paginate_path: archive/:num
+permalink: /:year/:title/
+baseurl: /
+url: http://madfaill.me
 
-production_url: http://madfaill.me
-permalink: /:year/:month/:day/:title
+analytics: false
+google_analytics: 'UA-XXXXXXXX-X'
+
+disqus: false
+disqus_shortname: 'your-disqus-shortname'
 
 author:
   email: madfaill@gmail.com
-  github: https://github.com/MadFaill
-  twitter: https://twitter.com/MadFaill
-  facebook: https://www.facebook.com/a8h333
+  github: MadFaill
+  twitter: MadFaill
+  name: Nikolay Balakirev
 
-# lsi: true
-#rss: http://feeds.feedburner.com/rss/
-#google_adsense: true
-#google_analytics: true
-#ga_id:
+
+defaults:
+    -
+        scope:
+            path: "" # empty string for all files
+            type: pages
+        values:
+            layout: default
+    -
+        scope:
+            path: "" # empty string for all files
+            type: posts
+        values:
+            layout: post
+    -
+        scope:
+            path: ""
+            type: drafts
+        values:
+            layout: post
