@@ -1,6 +1,5 @@
 name: "Кладовая Гейтса"
 description: "Не покидая пыльных стен"
-meta_description: "Блог программиста"
 
 exclude: ['Gemfile', 'Gemfile.lock', 'makefile']
 
@@ -13,6 +12,9 @@ permalink: /:year/:title/
 baseurl: /
 url: http://madfaill.me
 
+timezone: Europe/Moscow
+encoding: "utf-8"
+
 analytics: false
 google_analytics: 'UA-XXXXXXXX-X'
 
@@ -24,6 +26,8 @@ author:
   github: MadFaill
   twitter: MadFaill
   name: Nikolay Balakirev
+
+show_drafts: false
 
 
 defaults:
