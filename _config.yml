@@ -1,4 +1,4 @@
-name: "Кладовая Гейтса"
+name: "Хомяк отчаянного хиппи"
 description: "Не покидая пыльных стен"
 
 exclude: ['Gemfile', 'Gemfile.lock', 'makefile']
