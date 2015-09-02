@@ -1,0 +1,40 @@
+<script>
+  window.addEventListener('player_init', function() { 
+
+    // Setup the player to autoplay the next track
+    var a = audiojs.createAll({
+      trackEnded: function() {
+        var next = $('ol.playlist li.playing').next();
+        if (!next.length) next = $('ol.playlist li').first();
+        next.addClass('playing').siblings().removeClass('playing');
+        audio.load($('a.cplay', next).attr('data-src'));
+        audio.play();
+      }
+    });
+    
+    // Load in the first track
+    var audio = a[0];
+        first = $('ol.playlist a.cplay').attr('data-src');
+    $('ol.playlist li').first().addClass('playing');
+    audio.load(first);
+
+    // Load in a track on click
+    $('ol.playlist li a.cplay').click(function(e) {
+      e.preventDefault();
+      $(this).parent('li').addClass('playing').siblings().removeClass('playing');
+      audio.load($(this).attr('data-src'));
+      audio.play();
+    });
+  });
+</script>
+
+<audio preload></audio>
+<ol class="playlist">
+{% for track_hash in include.records %}
+{% assign track = track_hash[1] %}
+	<li>
+    <a class="cplay" href="#" data-src="{{ track.source }}">{{ track.author }} - {{ track.title }}</a>
+    <span>[<a href="{{ track.url }}" target="_blank">resource</a>]</span>
+  </li>
+{% endfor %}
+</ol>
