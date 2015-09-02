@@ -24,11 +24,13 @@ disqus_shortname: 'your-disqus-shortname'
 author:
   email: madfaill@gmail.com
   github: MadFaill
+  facebook: MadFaill
   twitter: MadFaill
   name: Nikolay Balakirev
 
 show_drafts: false
 
+excerpt_separator: "<!-- cut -->"
 
 defaults:
     -

@@ -159,6 +159,9 @@ nav.main-nav a.cta {
 
 /* Typography */
 /*Accent color*/
+p a { color: #5694f1; }
+p a:hover { color: #5badf0; }
+
 a,
 #title,
 #post-list a:hover,
@@ -168,8 +171,6 @@ a,
 	color: #5badf0;
 	color: #5694f1;
 }
-
-p a { color: #5694f1; }
 
 /*Transitions*/
 a,
@@ -183,10 +184,10 @@ a,
 }
 
 ul 	{ margin:0; padding:0; }
-ul li	{ list-style-type:circle; list-style-position:inside; }
+ul li	{ list-style-type:circle; list-style-position:inside; line-height: 1.5; }
 
 /* Line Height */
-#post-body, p { line-height:1.7; }
+#post-body, p { line-height:1.5; text-align: justify; }
 
 b, strong { font-weight: 500;
   color: #1E2025; }
@@ -654,4 +655,9 @@ h2.month {
 	font-weight: bold;
 	font-size: 14px;
 	color: #f50000;
+}
+
+#user_photo {
+    max-width:100%;
+    height:auto;
 }

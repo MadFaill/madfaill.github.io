@@ -14,7 +14,7 @@ function isRetina() {
 		return true;
  
 	return false;
-};
+}
  
  
 function retina() {
@@ -31,6 +31,35 @@ function retina() {
 		
 		$(image).attr("src", path);
 	});
-};
+}
  
 $(document).ready(retina);
+
+
+function init_audio_player(player_id)
+{
+    var el = document.getElementById('audio_'+player_id),
+        audio = audiojs.create(el, {
+            trackEnded: function () {
+                var next = $('#'+player_id+' li.playing').next();
+                if (!next.length) next = $('ol.playlist li').first();
+                next.addClass('playing').siblings().removeClass('playing');
+                audio.load($('a.cplay', next).attr('data-src'));
+                audio.play();
+            }
+        });
+
+    // Load in the first track
+    var first = $('#'+player_id+' a.cplay').attr('data-src');
+
+    $('#'+player_id+' li').first().addClass('playing');
+    audio.load(first);
+
+    // Load in a track on click
+    $('#'+player_id+' li a.cplay').click(function (e) {
+        e.preventDefault();
+        $(this).parent('li').addClass('playing').siblings().removeClass('playing');
+        audio.load($(this).attr('data-src'));
+        audio.play();
+    });
+}
