@@ -3,8 +3,19 @@ profile: true
 permalink: music/
 ---
 
+<link rel="stylesheet" href="{{ site.baseurl }}assets/css/audio.css">
+<script src="{{ site.baseurl }}assets/js/audiojs/audio.min.js"></script>
+<script>
+  var a = audiojs;
+  a.events.ready(function() {
+    var a1 = a.createAll();
+  });
+</script>
+
 Не помню дня, когда писал код без музыки. А качественная музыка позволяет работать продуктивнее, параллельно перенося вас в далекие тихие уголки вашего подсознания. Друзья, на данной странице я выкладываю музыку, которую сам с удовольствием переслушиваю раз за разом.
 
+<br><br>
+<a href="http://kolber.github.io/audiojs/demos/test6.html">Плейлисты сделать так! Для каждого отдельно!</a>
 <br><br>
 
 <h3>PromoDJ podcasts</h3>
@@ -14,12 +25,10 @@ permalink: music/
 {% assign track = track_hash[1] %}
 
 	<li>
-		<span>{{ track.title }}</span>
-		<span>
-			{% for tag in track.tags %}
-				<em>{{ tag }}</em>
-			{% endfor %}
-		</span>
+		<audio src="{{ track.source }}" preload="auto"></audio>
+	    <div class="track-details">
+	      <span class="title vtop">{{ track.title }}</span><span class="vtop"> <em>by</em> {{ track.author }}</span>
+	    </div>
 	</li>
 	
 
