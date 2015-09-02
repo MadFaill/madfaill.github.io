@@ -1,0 +1,23 @@
+---
+layout: default
+archive: true
+---
+
+<h1>А-а-а-а... Бублик! Дырка!</h1>
+
+
+<p>
+    Страница, которую вы искали, либо не существовала, либо более не существует. Советую вам побродить и поситать что-то другое.
+</p>
+
+
+{% if page.archive %}
+<ul id="post-list" class="archive readmore">
+    <h3>Куда дальше?!...</h3>
+    {% for post in site.posts %}
+    <li>
+        <a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}">{{ post.title }}<aside class="dates">{{ post.date | date:"%b %d" }}</aside></a>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
