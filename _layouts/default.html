@@ -29,6 +29,17 @@
       ga('send', 'pageview');
     </script>
   {% endif %}
+
+  {% if page.player %}
+    <link rel="stylesheet" href="{{ site.baseurl }}assets/css/audio.css">
+    <script src="{{ site.baseurl }}assets/js/audiojs/audio.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        var _event = new Event('player_init');
+        window.dispatchEvent(_event);
+      });
+    </script>
+  {% endif %}
 </body>
 </html>
 

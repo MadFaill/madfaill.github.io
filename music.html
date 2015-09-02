@@ -1,38 +1,51 @@
 ---
 profile: true
 permalink: music/
+player: true
 ---
 
-<link rel="stylesheet" href="{{ site.baseurl }}assets/css/audio.css">
-<script src="{{ site.baseurl }}assets/js/audiojs/audio.min.js"></script>
 <script>
-  var a = audiojs;
-  a.events.ready(function() {
-    var a1 = a.createAll();
+  window.addEventListener('player_init', function() { 
+
+    // Setup the player to autoplay the next track
+    var a = audiojs.createAll({
+      trackEnded: function() {
+        var next = $('ol.playlist li.playing').next();
+        if (!next.length) next = $('ol.playlist li').first();
+        next.addClass('playing').siblings().removeClass('playing');
+        audio.load($('a', next).attr('data-src'));
+        audio.play();
+      }
+    });
+
+    console.log(a);
+    
+    // Load in the first track
+    var audio = a[0];
+        first = $('ol.playlist a').attr('data-src');
+    $('ol.playlist li').first().addClass('playing');
+    audio.load(first);
+
+    // Load in a track on click
+    $('ol li').click(function(e) {
+      e.preventDefault();
+      $(this).addClass('playing').siblings().removeClass('playing');
+      audio.load($('a', this).attr('data-src'));
+      audio.play();
+    });
   });
 </script>
 
-Не помню дня, когда писал код без музыки. А качественная музыка позволяет работать продуктивнее, параллельно перенося вас в далекие тихие уголки вашего подсознания. Друзья, на данной странице я выкладываю музыку, которую сам с удовольствием переслушиваю раз за разом.
+<h3>Не большое собрание подкастов PromoDJ</h3>
 
-<br><br>
-<a href="http://kolber.github.io/audiojs/demos/test6.html">Плейлисты сделать так! Для каждого отдельно!</a>
-<br><br>
+<p>Не знаю как вы, друзья, а я слушаю музыку во время работы. От того, что я слушаю, напрямую зависит результат моей работы. Стараюсь слушать я музыку спокойную и позитивную. Ниже вы найдете собрание, близкое мне по созвучиям и ритму.</p>
 
-<h3>PromoDJ podcasts</h3>
-
-<ul id="playlist">
+<audio preload></audio>
+<ol class="playlist">
 {% for track_hash in site.data.music.promodj %}
 {% assign track = track_hash[1] %}
-
-	<li>
-		<audio src="{{ track.source }}" preload="auto"></audio>
-	    <div class="track-details">
-	      <span class="title vtop">{{ track.title }}</span><span class="vtop"> <em>by</em> {{ track.author }}</span>
-	    </div>
-	</li>
-	
-
+	<li><a href="#" data-src="{{ track.source }}">{{ track.author }} - {{ track.title }}</a></li>
 {% endfor %}
-</ul>
+</ol>
 
 {% include footer.html %}
