@@ -2,6 +2,7 @@
 title:  "PHP Simple ACL"
 date:   2013-11-10 10:18:00
 description: "Простая реализация ограничения доступа"
+player: true
 ---
 
 # Предыстория
@@ -26,3 +27,4 @@ var_dump($user->getName(), 'Role::ROLE_USER', $acl->roleMatch(Role::ROLE_USER));
 // TRUE
 
 {% endhighlight %}
+

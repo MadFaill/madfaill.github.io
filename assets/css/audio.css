@@ -13,10 +13,10 @@
 .audiojs .error-message { height: 24px;line-height: 24px; }
 
 
-ol.playlist a { color: #888; text-decoration: none; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;}
+ol.playlist a.cplay { color: #888; text-decoration: none; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: inline-block; width: 80%;}
 ol.playlist { padding: 0px; margin: 0px; list-style: decimal-leading-zero inside; color: #ccc; width: 460px; border-top: 1px solid #ccc; font-size: 0.9em; }
 ol.playlist li { position: relative; margin: 0px; padding: 9px 2px 10px; border-bottom: 1px solid #ccc; cursor: pointer; }
-ol.playlist li a { display: block; text-indent: -3.3ex; padding: 0px 0px 0px 28px; }
+ol.playlist li a.cplay { text-indent: -3.3ex; padding: 0px 0px 0px 28px; vertical-align: bottom; }
 ol.playlist li.playing { color: #aaa; text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.3); }
-ol.playlist li.playing a { color: #000; }
+ol.playlist li.playing a.cplay { color: #000; }
 ol.playlist li.playing:before { content: '♬'; width: 14px; height: 14px; padding: 3px; line-height: 14px; margin: 0px; position: absolute; left: -24px; top: 9px; color: #000; font-size: 13px; text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.2); }
