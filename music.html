@@ -1,0 +1,29 @@
+---
+profile: true
+permalink: music/
+---
+
+Не помню дня, когда писал код без музыки. А качественная музыка позволяет работать продуктивнее, параллельно перенося вас в далекие тихие уголки вашего подсознания. Друзья, на данной странице я выкладываю музыку, которую сам с удовольствием переслушиваю раз за разом.
+
+<br><br>
+
+<h3>PromoDJ podcasts</h3>
+
+<ul id="playlist">
+{% for track_hash in site.data.music.promodj %}
+{% assign track = track_hash[1] %}
+
+	<li>
+		<span>{{ track.title }}</span>
+		<span>
+			{% for tag in track.tags %}
+				<em>{{ tag }}</em>
+			{% endfor %}
+		</span>
+	</li>
+	
+
+{% endfor %}
+</ul>
+
+{% include footer.html %}
