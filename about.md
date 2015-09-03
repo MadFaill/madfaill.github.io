@@ -20,7 +20,7 @@ photo: true
 - [Seopult.ru][5] - (Разработчик)
 - [Rolf Outlet][6] - (Разработчик)
 - [Bluefish.ru][7] - (Разработчик)
-- [1Prime.ru][8] - (Ведущий азработчик, TeamLead)
+- [1Prime.ru][8] - (Ведущий разработчик, TeamLead)
 - [Utinet.ru][9] - (Разработчик)
 
 
