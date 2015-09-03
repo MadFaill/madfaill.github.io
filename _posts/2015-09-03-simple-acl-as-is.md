@@ -148,7 +148,7 @@ var_dump($user->getName(), 'delete.post', $acl->userCan('delete.post'));
 // Sergey, delete.post, true
 
 var_dump($user->getName(), 'publish.post', $acl->userCan('publish.post'));
-// Sergey, publish.post, true
+// Sergey, publish.post, false
 
 {% endhighlight %}
 
