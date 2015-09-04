@@ -10,7 +10,7 @@ tags: ['python', 'sqlalchemy']
 Из-за legacy кода не было возможности обновить библиотеку sqlalchemy. Задача-то сама по себе весьма простая и внимания особого не требует.
 Однако, в нашем случае, пришлось писать кастомный компилер для алхимии.
 
-Дело все в том, что только с версией 1.1 в sqlalchemy появился **aggregate_order_by** внутри **sqlalchemy.dialects.postgresql**. 
+Дело все в том, что только с версией 1.1 в sqlalchemy появился **aggregate\_order\_by** внутри **sqlalchemy.dialects.postgresql**. 
 Собственно говоря, вот простая и топорная реализация:
 
 {% highlight python %}
@@ -55,3 +55,15 @@ print query.statement.compile(dialect=postgresql.dialect())
 print query.scalar()
 
 {% endhighlight %}
+
+Конечно, в новой версии все весьма проще и понятнее =)
+
+{% highlight python %}
+from sqlalchemy.dialects.postgresql import aggregate_order_by
+expr = func.array_agg(aggregate_order_by(table.c.a, table.c.b.desc()))
+stmt = select([expr])
+{% endhighlight %}
+
+Более подробнее о различиях можно прочитать [тут][1]
+
+[1]: http://docs.sqlalchemy.org/en/latest/changelog/migration_11.html
