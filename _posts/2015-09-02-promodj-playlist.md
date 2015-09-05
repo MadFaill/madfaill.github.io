@@ -3,7 +3,7 @@ title:  "Promo DJ сборник подкастов"
 description: "Небольшой сборник подкастов, приятных слуху..."
 player: true
 category: "audio"
-tags: ['music', 'PromoDJ']
+tags: [music, promo-dj]
 ---
 
 Ну вот-таки и доползли у меня руки до плеера. Запилил весьма простой на базе [audio.js][1]. Функционал у него весьма простой

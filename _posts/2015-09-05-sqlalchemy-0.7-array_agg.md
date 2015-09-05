@@ -2,7 +2,7 @@
 title:  "Sqlalchemy 0.7.7 array_agg filter_by"
 description: "Для тех, кто не может обновить алхимию..."
 category: "python"
-tags: ['python', 'sqlalchemy']
+tags: [python, sql-alchemy]
 ---
 
 Из-за legacy кода не было возможности обновить библиотеку sqlalchemy. Задача-то сама по себе весьма простая и внимания особого не требует.

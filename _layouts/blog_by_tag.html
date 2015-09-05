@@ -1,0 +1,19 @@
+---
+layout: default
+title: "Статьи с меткой"
+---
+
+<h1 class="title">Статьи с меткой {{ page.tag }}</h1>
+
+<ul id="post-list">
+    {% if site.tags[page.tag] %}
+        {% for post in site.tags[page.tag] %}
+        <li>
+            <a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}"><aside class="dates">{{ post.date | date:"%b %d" }}</aside></a>
+            <a href="{{ site.baseurl }}{{ post.url | remove_first: '/' }}">{{ post.title }} <h2>{{ post.description }}</h2></a>
+        </li>
+        {% endfor %}
+    {% endif %}
+</ul>
+
+{% include footer.html %}

@@ -1,0 +1,20 @@
+- slug: music
+  name: Music
+
+- slug: php
+  name: PHP
+
+- slug: acl
+  name: ACL
+
+- slug: python
+  name: Python
+
+- slug: promo-dj
+  name: Promo DJ
+
+- slug: sound-cloud
+  name: SoundCloud
+
+- slug: sql-alchemy
+  name: SqlAlchemy

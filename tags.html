@@ -5,7 +5,13 @@ permalink: tags/
 ---
 <h1 class="title">Теги</h1>
 <div id="tag-cloud">
-    {{ site | tag_cloud }}
+    {% for tag in site.data.tags %}
+        <a href="/blog/tag/{{ tag.slug }}/" class="set-1">{{ tag.name }}</a>
+    {% endfor %}
 </div>
+
+<!--{% for post in site.posts %}-->
+    <!--{{ post.tags }}-->
+<!--{% endfor %}-->
 
 {% include footer.html %}
