@@ -3,6 +3,10 @@
         <a href="{{ site.baseurl }}"> <span class="arrow">←</span> Хомяк </a>
     {% endif %}
 
+    {% if page.url != "/tags/" %}
+        <a href="{{ site.baseurl }}tags">Теги </a>
+    {% endif %}
+
     {% if page.url != "/about/" %}
         <a href="{{ site.baseurl }}about">Информация </a>
     {% endif %}

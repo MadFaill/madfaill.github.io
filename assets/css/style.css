@@ -371,7 +371,7 @@ img {
 /*=========================================
 Post List
 =========================================== */
-#post-list,#archive-list {
+#post-list,#archive-list,#tag-cloud {
 	margin-top: 100px;
 }
 
@@ -660,4 +660,38 @@ h2.month {
 #user_photo {
     max-width:100%;
     height:auto;
+}
+
+#tag-cloud a {
+    text-decoration: none;
+    color: #545454;
+    background-color: #ececec;
+    padding: 4px 12px;
+    border-radius: 12px;
+    border: none !important;
+}
+
+#tag-cloud .set-1 {
+    font-size: 10pt;
+    line-height: 32px;
+}
+
+#tag-cloud .set-3 {
+    font-size: 18pt;
+    line-height: 46px;
+}
+
+#tag-cloud .set-2 {
+    font-size: 14pt;
+    line-height: 38px;
+}
+
+#tag-cloud .set-4 {
+    font-size: 22pt;
+    line-height: 52px;
+}
+
+#tag-cloud .set-5 {
+    font-size: 26pt;
+    line-height: 58px;
 }

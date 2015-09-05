@@ -32,6 +32,9 @@ show_drafts: false
 
 excerpt_separator: "<!-- cut -->"
 
+tag_page_layout: tag_page
+tag_page_dir: tags
+
 defaults:
     -
         scope:

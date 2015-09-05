@@ -2,6 +2,7 @@
 title:  "Небольшая подборка IDM & Other..."
 description: "Очередной плейлист для продуктивной работы."
 category: "audio"
+tags: ['music', 'SoundCloud']
 ---
 
 **Йууухууууу....** 
