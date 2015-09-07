@@ -1,7 +1,7 @@
 ---
 title:  "Sqlalchemy 0.7.7 array_agg filter_by"
 description: "Для тех, кто не может обновить алхимию..."
-category: "python"
+category: programming
 tags: [python, sql-alchemy]
 ---
 

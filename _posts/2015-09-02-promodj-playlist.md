@@ -2,7 +2,7 @@
 title:  "Promo DJ сборник подкастов"
 description: "Небольшой сборник подкастов, приятных слуху..."
 player: true
-category: "audio"
+category: audio
 tags: [music, promo-dj]
 ---
 

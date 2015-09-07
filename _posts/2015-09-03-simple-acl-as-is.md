@@ -1,6 +1,7 @@
 ---
 title:  "PHP Simple ACL"
 description: "Простая реализация ограничения доступа"
+category: programming
 tags: [php, acl]
 ---
 
