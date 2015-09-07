@@ -4,6 +4,7 @@ description: "Небольшой сборник подкастов, приятн
 player: true
 category: audio
 tags: [music, promo-dj]
+copy: {source: "Promo DJ", url: "http://promodj.com"}
 ---
 
 Ну вот-таки и доползли у меня руки до плеера. Запилил весьма простой на базе [audio.js][1]. Функционал у него весьма простой
@@ -16,12 +17,6 @@ tags: [music, promo-dj]
 
 
 {% include player.html records=site.data.music.promodj player_id="pdj" %}
-
-<p class="copyright-informer">
-  <sup>*</sup>
-  Вниманию правообладателей: данная страница является по большей части личной. Все аудиоматериалы на ней с Вашего соглашения на сайте <b>PromoDJ</b> находятся в открытом доступе. Если Вы считаете, что ваша музыка не может присутствовать в моем плейлисте - <em><u>прошу Вас связаться со мной для устранения данного непорядка</u></em>.
-</p>
-
 
 [1]: http://audio.js
 [2]: http://promodj.com/

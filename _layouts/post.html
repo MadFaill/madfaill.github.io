@@ -5,7 +5,6 @@ archive: true
 
 {% assign post = page %}
 {% if post.tags.size > 0 %}
-    {% capture tags_content %}Метки{% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
     {% for post_tag in post.tags %}
         {% for data_tag in site.data.tags %}
             {% if data_tag.slug == post_tag %}
@@ -13,7 +12,7 @@ archive: true
             {% endif %}
         {% endfor %}
         {% if tag %}
-            {% capture tags_content_temp %}{{ tags_content }}<a href="/blog/tag/{{ tag.slug }}/">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+            {% capture tags_content_temp %}{{ tags_content }}#<a href="/blog/tag/{{ tag.slug }}/">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
             {% assign tags_content = tags_content_temp %}
         {% endif %}
     {% endfor %}
@@ -31,12 +30,13 @@ archive: true
     </section>
 </article>
 <footer id="post-meta" class="clearfix">
-    <p>
-        {{ tags_content }} <br/>
-        {% if post.resource %}
-            Данный материал взят <a href="{{ post.resource }}">отсюда</a>
-        {% endif %}
-    </p>
+    {% if post.resource %}
+        <p class="source">Данный материал взят <a href="{{ post.resource }}">отсюда</a> с целью сохранения его в случае удаления с источника.</p>
+    {% endif %}
+    {% if post.copy %}
+        <p class="copy">Вниманию правообладателей: данная страница является по большей части личной. Все аудиоматериалы на ней с Вашего соглашения на сайте <a href="{{ post.copy.url }}">{{ post.copy.source }}</a> находятся в открытом доступе. Если Вы считаете, что ваша музыка не может присутствовать в моем плейлисте - <em><u>прошу Вас связаться со мной для устранения данного непорядка</u></p>
+    {% endif %}
+    <p>{{ tags_content }}</p>
     <a href="http://twitter.com/{{ site.author.twitter }}">
         <img class="avatar" src="{{ site.baseurl }}assets/images/avatar.png">
         <div>
