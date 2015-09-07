@@ -31,7 +31,12 @@ archive: true
     </section>
 </article>
 <footer id="post-meta" class="clearfix">
-    <p>{{ tags_content }}</p>
+    <p>
+        {{ tags_content }} <br/>
+        {% if post.resource %}
+            Данный материал взят <a href="{{ post.resource }}">отсюда</a>
+        {% endif %}
+    </p>
     <a href="http://twitter.com/{{ site.author.twitter }}">
         <img class="avatar" src="{{ site.baseurl }}assets/images/avatar.png">
         <div>

@@ -18,3 +18,9 @@
 
 - slug: sql-alchemy
   name: SqlAlchemy
+
+- slug: tutorial
+  name: Tutorial
+
+- slug: nginx
+  name: Nginx

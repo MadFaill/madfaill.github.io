@@ -10,6 +10,7 @@ tags: [python, sql-alchemy]
 С версией 1.1 в sqlalchemy появился **aggregate\_order\_by** внутри **sqlalchemy.dialects.postgresql**. 
 В случае же с 0.7.7 приходится делать влт так:
 
+<!-- cut -->
 {% highlight python %}
 
 from sqlalchemy.sql.expression import ColumnElement, _literal_as_column

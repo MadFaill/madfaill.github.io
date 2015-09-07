@@ -1,21 +1,16 @@
 ---
 title:  "Pyhton array_chunk"
 description: "Варианты на тему..."
-player: true
 category: programming
 tags: [python]
 ---
 
 Собственно говоря, несколько простых реализаций `php-like array_chunk` в **python**. Использую как шпаргалку. Надо бы протестить скорость выполнения + потребление памяти и выложить еще бенчмарки.
 
-**Example 1**
+<!-- cut -->
+**Usage example**
 
 {% highlight python %}
-def array_chunk(l, n):
-    for i in xrange(0, len(l), n):
-        yield l[i:i+n]
-
-# usage
 import pprint
 pprint.pprint(list(chunks(range(10, 75), 10)))
 
@@ -26,6 +21,15 @@ pprint.pprint(list(chunks(range(10, 75), 10)))
  [50, 51, 52, 53, 54, 55, 56, 57, 58, 59],
  [60, 61, 62, 63, 64, 65, 66, 67, 68, 69],
  [70, 71, 72, 73, 74]]
+
+{% endhighlight %}
+
+**Example 1**
+
+{% highlight python %}
+def array_chunk(l, n):
+    for i in xrange(0, len(l), n):
+        yield l[i:i+n]
 
 {% endhighlight %}
 
