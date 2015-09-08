@@ -10,7 +10,7 @@ resource: "http://ruhighload.com/index.php/2009/04/24/%D0%BD%D0%B0%D1%81%D1%82%D
 
 <!-- cut -->
 
-Сразу продемонстрирую итоговый вариант конфига:
+## Основная конфигурация с комментариями
 
 {% highlight nginx %}
 
@@ -69,6 +69,15 @@ http {
     tcp_nodelay on;
 	tcp_nopush on;
 
+    # Файлы более 10Мб Nginx будет читать с диска минуя операционный кеш
+    directio 10m;
+
+    # Ограничиваем скорость отдачи до 196Кб/с
+    limit_rate 196K;
+
+    # Ограничение скорости отдачи будет накладываться после 1Мб
+    limit_rate_after 1m;
+
 	# Обязательно нужно использовать сжатие, это значительно уменьшит трафик.
     gzip on;
 
@@ -90,3 +99,65 @@ http {
 
 {% endhighlight %}
 
+
+## Кеширование
+
+Основная задача - разбить на кеширующий и не кеширующий сервер. Ниже приведен пример с настройками по каждому из них.
+
+{% highlight nginx %}
+
+
+http {
+    ...
+    # Во-первых, убедимся что есть директория: /var/cache/nginx
+    # Устанавливаем размер кеша в 32Мб, сохранять его будем в папку /var/cache/nginx
+    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=all:32m;
+
+    # Nginx позволяет кешировать ответы от fastcgi
+    # Установим максимальный размер кеша в 100Мб, сохранять его будем в папку /var/cache/fpm
+    fastcgi_cache_path /var/cache/fpm levels=1:2 keys_zone=fcgi:100m;
+    fastcgi_cache_key "$scheme$request_method$host$request_uri";
+    ...
+}
+
+# fastcgi_pass сервер (без кеширования)
+server {
+        listen 81;
+
+        location / {
+            # fpm, etc...
+        }
+
+        location ~ \.php$ {
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
+            fastcgi_index index.php;
+            include fastcgi_params;
+            fastcgi_cache fcgi;
+
+            # кешируем только 200 OK н а60 минут
+            fastcgi_cache_valid 200 60m;
+        }
+}
+
+# основной сервер (кеширующий)
+server {
+        listen 80;
+
+        location / {
+
+                # не кешируем если есть cookies
+                if ($http_cookie ~* ".+" ) {
+                        set $do_not_cache 1;
+                }
+
+                proxy_cache_bypass $do_not_cache;
+                proxy_pass http://127.0.0.1:81/;
+                proxy_cache all;
+
+                # кешируем ошибки на 1 минуту
+                proxy_cache_valid 404 502 503 1m;
+                proxy_cache_valid any 1h;
+        }
+}
+
+{% endhighlight %}
