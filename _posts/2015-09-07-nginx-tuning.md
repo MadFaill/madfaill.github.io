@@ -2,7 +2,7 @@
 title:  "Тонкая настройка Nginx"
 description: "Когда базовой настройки уже не хватает..."
 category: tutorial
-tags: [nginx, tutorial]
+tags: [nginx, snippet]
 resource: "http://ruhighload.com/index.php/2009/04/24/%D0%BD%D0%B0%D1%81%D1%82%D1%80%D0%BE%D0%B9%D0%BA%D0%B0-nginx/"
 ---
 
