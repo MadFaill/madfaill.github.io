@@ -12,7 +12,7 @@ tags: [python]
 
 {% highlight python %}
 import pprint
-pprint.pprint(list(chunks(range(10, 75), 10)))
+pprint.pprint(list(array_chunk(range(10, 75), 10)))
 
 [[10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
  [20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
