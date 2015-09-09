@@ -84,3 +84,15 @@ def array_chunk(iterable, size):
 {% highlight python %}
 array_chunk = lambda l, n: [l[x: x+n] for x in xrange(0, len(l), n)]
 {% endhighlight %}
+
+
+**Example 7**
+
+{% highlight python %}
+import itertools
+
+def array_chunk(l, n):
+    for _, chunk in itertools.groupby(xrange(0, len(l)), lambda key: key / n):
+            yield [l[i] for i in chunk]
+
+{% endhighlight %}
