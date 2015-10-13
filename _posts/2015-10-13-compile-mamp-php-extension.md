@@ -17,7 +17,7 @@ Before you start make sure that both XCode and [Homebrew][2] and autoconf are al
 brew install autoconf
 ```
 
-2. Download and copy appropriate PHP source code
+**2. Download and copy appropriate PHP source code**
 
 MAMP doesn’t include any PHP source code which is needed when compiling PHP extensions.  PHP Source files are provided on the [MAMP Downloads][3] page and are are referred to as “MAMP Components.” You can optionally download source directly from the [PHP Releases][4] page, making sure you locate the source files that exactly match your installed version of PHP.  Once you have the source files,  unzip them and rename the folder to “php”   Copy this folder to the appropriate MAMP includes directory.  For PHP 5.5.3 that would be:
 
