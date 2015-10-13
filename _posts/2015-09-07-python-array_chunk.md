@@ -12,7 +12,7 @@ tags: [python]
 
 {% highlight python %}
 import pprint
-pprint.pprint(list(chunks(range(10, 75), 10)))
+pprint.pprint(list(array_chunk(range(10, 75), 10)))
 
 [[10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
  [20, 21, 22, 23, 24, 25, 26, 27, 28, 29],
@@ -83,4 +83,16 @@ def array_chunk(iterable, size):
 
 {% highlight python %}
 array_chunk = lambda l, n: [l[x: x+n] for x in xrange(0, len(l), n)]
+{% endhighlight %}
+
+
+**Example 7**
+
+{% highlight python %}
+import itertools
+
+def array_chunk(l, n):
+    for _, chunk in itertools.groupby(xrange(0, len(l)), lambda key: key / n):
+            yield [l[i] for i in chunk]
+
 {% endhighlight %}

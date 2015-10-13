@@ -24,3 +24,6 @@
 
 - slug: nginx
   name: Nginx
+
+- slug: snippet
+  name: Snippet
