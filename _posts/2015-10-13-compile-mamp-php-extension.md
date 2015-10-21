@@ -2,7 +2,7 @@
 title:  "Сборка расширений PHP для MAMP"
 description: "Just compile me..."
 category: tutorial
-tags: [tutorial]
+tags: [tutorial, php]
 resource: "http://verysimple.com/2013/11/05/compile-php-extensions-for-mamp/"
 ---
 
