@@ -15,8 +15,8 @@ url: http://madfaill.me
 timezone: Europe/Moscow
 encoding: "utf-8"
 
-analytics: false
-google_analytics: 'UA-XXXXXXXX-X'
+analytics: true
+google_analytics: 'UA-25673770-1'
 
 disqus: true
 disqus_shortname: 'madfaill'
