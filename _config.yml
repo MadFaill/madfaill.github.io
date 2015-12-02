@@ -18,8 +18,8 @@ encoding: "utf-8"
 analytics: false
 google_analytics: 'UA-XXXXXXXX-X'
 
-disqus: false
-disqus_shortname: 'your-disqus-shortname'
+disqus: true
+disqus_shortname: 'madfaill'
 
 author:
   email: me@madfaill.me
