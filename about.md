@@ -7,7 +7,7 @@ photo: true
 <img id="user_photo" align="center" src="{{ site.baseurl }}assets/images/photo.png">
 
 Меня зовут Николай Балакирев. 
-Я ~~работаю в [Rambler][10]~~. Кроме программирования я занимаюсь спортом. 
+Я _работаю в [Rambler][10]_. Кроме программирования я занимаюсь спортом. 
 Меня можно найти в [Twitter][11], [Facebook][12] и на [GitHub][13]. 
 Вы можете написать мне [email][14].
 
