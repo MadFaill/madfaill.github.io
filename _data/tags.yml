@@ -27,3 +27,9 @@
 
 - slug: snippet
   name: Snippet
+
+- slug: shell
+  name: Shell
+
+- slug: unix
+  name: UNIX
