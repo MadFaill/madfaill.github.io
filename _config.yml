@@ -10,7 +10,7 @@ paginate: 20
 paginate_path: archive/:num
 permalink: /:year/:title/
 baseurl: /
-url: http://madfaill.me
+url: http://madfaill.github.io/
 
 timezone: Europe/Moscow
 encoding: "utf-8"
